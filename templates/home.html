@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HACK CARE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+
+</head>
+
+<body>
+ <nav class="navbar">
+		<div class="logo">HACK CARE</div>
+		
+		<ul class="nav-links">
+		
+		<input type="checkbox" id="checkbox_toggle" />
+		
+		<label for="checkbox_toggle" class="hamburger">&#9776;</label>
+		
+		<div class="menu">
+		
+		<li><a href="/">Home</a></li>
+		<li><a href="/account/register">Sign In</a></li>
+		<li><a href="/account/login">Login</a></li>
+		<li><a href="/account/logout">Log out</a></li>
+
+		</div>
+    </ul>
+ </nav>
+
+
+  <section id="banner">
+    {% if request.user.is_authenticated %}
+    <header>
+      <h2>Hi! {{user.firstname}} </h2>
+      <p>How are you feeling today!</p>
+    </header>
+  </section>
+  <!-- Intro -->
+  <section id="intro" class="container">
+    <div class="row">
+      <div class="col-4 col-12-medium">
+        <section class="first">
+          <i class="fa fa-medkit" style="font-size:48px;color:#03c04a;
+padding:  30px 30px;"></i>
+          <header>
+            <a href="/symptoms" class="button large">Check Symptoms</a>
+          </header>
+          <p>Analyze the symptoms that you are facing and provides with the disease that you are infected with.</p>
+        </section>
+      </div>
+      <div class="col-4 col-12-medium">
+        <section class="middle">
+          <i class="fa fa-user-md" style="font-size:50px;color:#03c04a;
+padding: 30px 30px;"></i>
+          <header>
+            <a href="#" class="button large">Find Doctor</a>
+          </header>
+          <p>After knowing which disease you are facing, you can contact docter which is specialist in that domain.</p>
+        </section>
+      </div>
+      <div class="col-4 col-12-medium">
+        <section class="last">
+          <i class="fa fa-hospital-o" style="font-size:48px;color:#03c04a;
+padding: 30px 30px;"></i>
+          <header>
+             <a href="/find_hospital" class="button large">Nearest Hospital</a>
+          </header>
+          <p>This helps to find the nearby hospitals in your area and then provide the best route to that hospital.</p>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <ul class="actions">
+        <button class='glowing-btn'><span class='glowing-txt'>G<span class='faulty-letter'>U</span>IDE</span></button>
+
+      </ul>
+    </footer>
+  </section>
+  <br>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    <ul class="links">
+      All rights reserved. <a href="http://googel.com">HackCare</a>
+    </ul>
+  </div>
+  {% else %}
+      <h2 style=" color: white;">Kindly Register yourself from <a style='color: green' href='/account/login' target='_blank'>here</a></h2>
+
+  {% endif %}
+
+
+  </section>
+
+</body>
+
+</html>

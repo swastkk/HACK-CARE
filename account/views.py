@@ -8,7 +8,7 @@ from django.contrib.auth import views as auth_views
 
 
 def home(request):
-    return render(request, "index.html", {})
+    return render(request, "home.html", {})
 
 
 def register(request):
