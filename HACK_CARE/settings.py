@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
+    'main',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,8 +58,8 @@ ROOT_URLCONF = 'HACK_CARE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+                'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -118,8 +122,38 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Login & Logout URLs
+LOGIN_URL = 'account/login/'
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = 'account/login/'
+
+JAZZMIN_SETTINGS = {
+    # title of the window (Will default to current_admin_site.site_title)
+    "site_title": "Hack Care",
+    # Title on the login screen (19 chars max) (will default to current_admin_site.site_header)
+    "site_header": "/",
+    # Title on the brand (19 chars max) (will default to current_admin_site.site_header)
+    "site_brand": "Hack Care",
+    "welcome_sign": "Welcome to the admin dashboard. Login to take incharge.",
+    # Copyright on the footer
+    "copyright": "Access Denied",
+    "changeform_format": "horizontal_tabs",
+    "topmenu_links": [
+        {
+            "name": "Home",
+            "url": "/",
+            "new_window": True
+        },
+    ],
+}
