@@ -149,6 +149,8 @@ JAZZMIN_SETTINGS = {
     # Copyright on the footer
     "copyright": "Access Denied",
     "changeform_format": "horizontal_tabs",
+    "site_logo": "../static/logo.png",
+    "site_logo_classes": "img-circle",
     "topmenu_links": [
         {
             "name": "Home",
