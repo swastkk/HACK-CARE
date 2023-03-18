@@ -1,6 +1,5 @@
-import pip._vendor.requests as requests 
+import pip._vendor.requests as requests
 from .models import HospitalQuery
-import json
 
 latitude = HospitalQuery.longitude
 longitude = HospitalQuery.latitude
@@ -26,6 +25,13 @@ for element in data['elements']:
         hospital_location = (element['lat'], element['lon'])
         hospitals.append((hospital_name, hospital_location))
 
+arr = []
+for hospital in hospitals:
+    vals = {}
+    vals['id'] = hospital[0]
+    vals['name'] = hospital[1]
+    arr.append(vals)
+print str(arr)
 # Print the list of nearby hospitals
 print("Nearby hospitals:")
 for hospital in hospitals:
