@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Nearby Hospitals</h1>
-    <p>Showing hospitals within {{ query.radius }} meters of ({{ query.latitude }}, {{ query.longitude }}).</p>
-    <ul>
-    {% for hospital in hospitals %}
-        <li>{{ hospital.0 }} ({{ hospital.1.0 }}, {{ hospital.1.1 }})</li>
-    {% empty %}
-        <li>No hospitals found.</li>
+ <table>
+
+  <tr>
+    <th>Location</th>
+    <th>Geolang</th>
+  </tr>
+    {% for h in  location %}
+  <tr>
+        <td>{{h.Name}}</td>
+        <td>{{h.Geolang}}</td>
+  </tr>
     {% endfor %}
-    </ul>
+</table> 
 {% endblock %}
