@@ -37,9 +37,4 @@ def nearby_hospitals(request):
             hospital_location = (element['lat'], element['lon'])
             hospitals.append((hospital_name, hospital_location))
     location = [{"Name": a[0], "Geolang": a[1]} for a in hospitals]
-    print(location)
-
-    # for hospital in hospitals:
-    #     location["Name"].append(hospital[0])
-    #     location["Geolang"].append(hospital[1])
     return render(request, 'nearby_hospitals.html', {'location': location})
