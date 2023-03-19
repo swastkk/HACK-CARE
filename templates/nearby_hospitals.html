@@ -35,14 +35,18 @@ th, td {
   padding: 20px;
   font-weight: 300;
 }
-
+body{
+  
+  background-color: #474848;
+  
+}
 </style>
-
+<body>
 <center>
-  <h1>Find Nearby Hospitals</h1>
-  <div id="Map" style="width:700px; height:500px"></div>
+  <h1 style="color: #03c04a;font-family: Arial, Helvetica, sans-serif;">Find Nearby Hospitals </h1>
+  <div id="Map" style="width:700px; height:500px;border: 2px #03c04a ;"></div>
 </center>
-<h2>Locations</h2>
+<h2 style="color: #03c04a">Locations</h2>
     <table>
       <thead>
         <tr>
@@ -61,5 +65,5 @@ th, td {
 {% endfor %}
       </tbody>
     </table>
-
+</body>
 <script src='../static/home.js'></script>

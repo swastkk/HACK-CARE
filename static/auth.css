@@ -4,7 +4,7 @@
     
     body {
       font-family: 'Source Sans Pro', sans-serif;
-      background-color: #EEEEEE;
+      background-color: #474848;
       display: flex;
       justify-content: center;
     }
@@ -96,7 +96,7 @@
     
     a {
       background: var(--color1);
-      color: #EEEEEE;
+      color: #474848;
       text-decoration: none;
       padding: 12px 0;
       margin: 20px 0 10px 0;
