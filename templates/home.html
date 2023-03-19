@@ -33,15 +33,30 @@
 		</div>
     </ul>
  </nav>
+ <section id="banner">
+     {% if request.user.is_authenticated %}
+  <header>
+    <h2>Hi! {{user.first_name}} </h2>
+    <p>How are you feeling today!</p>
+  </header>
+</section>
 
+ <div class="slider">
+  
+  <div class="carousel-wrapper">
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="image-one"></div>
+        <div class="image-two"></div>
+        <div class="image-three"></div>
+        <div class="image-four"></div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
 
-  <section id="banner">
-    {% if request.user.is_authenticated %}
-    <header>
-      <h2>Hi! {{user.first_name}} </h2>
-      <p>How are you feeling today!</p>
-    </header>
-  </section>
+  
   <!-- Intro -->
   <section id="intro" class="container">
     <div class="row">
@@ -57,10 +72,10 @@ padding:  30px 30px;"></i>
       </div>
       <div class="col-4 col-12-medium">
         <section class="middle">
-          <i class="fa fa-user-md" style="font-size:50px;color:#03c04a;
+          <i class="fa fa-search" style="font-size:50px;color:#03c04a;
 padding: 30px 30px;"></i>
           <header>
-            <a href="#" class="button large">Find Doctor</a>
+            <a href="#" class="button large">Find Medecine</a>
           </header>
           <p>After knowing which disease you are facing, you can contact docter which is specialist in that domain.</p>
         </section>
