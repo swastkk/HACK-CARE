@@ -5,8 +5,7 @@
 
 ## Development of a web portal to provide healthcare access to people in remote areas.
 
-# Problem Statement:
-https://docs.google.com/document/d/1nZKzkN2rvr1QQU2FHOnDe3Jn5nTcL408APds47grbho/edit?usp=sharing
+
 
 ## Project Idea:
 
