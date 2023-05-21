@@ -12,6 +12,9 @@ from .forms import DiseaseDetectionForm
 def home(request):
     return render(request, 'home.html')
 
+def guide(request):
+    return render(request, 'guide.html')
+
 
 def symptoms(request):
     return render(request, 'symptoms.html')
