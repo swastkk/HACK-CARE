@@ -1,0 +1,11 @@
+<h2>Matched Diseases:</h2>
+
+{% if diseases %}
+  <ul>
+    {% for disease in diseases %}
+      <li>{{ disease.name }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No matching diseases found.</p>
+{% endif %}
